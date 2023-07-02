@@ -38,6 +38,11 @@ public:
 			ROOT = newNode;												//mark the new node as ROOT
 			return;
 		}
+
+		if (element < parent->info) {
+			parent->leftchild = newNode;								//make the leftchild of the parent point to the new node
+		}
+
 	}
 };
 
