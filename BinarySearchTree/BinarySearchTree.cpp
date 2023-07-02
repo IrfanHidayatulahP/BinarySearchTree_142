@@ -29,7 +29,15 @@ public:
 		newNode->info = element;										// Assign value to the data field of the new node
 		newNode->leftchild = NULL;										// Make the left child of the new node point to NULL
 		newNode->rightchild = NULL;										// Make the right child of the new node point to NULL
+		
+		Node* parent = NULL;
+		Node* currentNode = NULL;
+		search(element, parent, newNode);								// Locate the node which will be the parent of the node to be inserted
 
+		if (parent == NULL) {												// if the parent is NULL (tree is empty)
+			ROOT = newNode;												//mark the new node as ROOT
+			return;
+		}
 	}
 };
 
